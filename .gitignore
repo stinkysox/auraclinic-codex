@@ -1,0 +1,49 @@
+node_modules
+.next
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Next.js Build Output
+.next/
+out/
+
+# Production Build Artifacts
+build/
+dist/
+
+# Local Environment Variables / Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debugging and System Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Vercel Deployment Artifacts
+.vercel
+
+# Testing Coverage Artifacts
+coverage/
+.nyc_output/
+
+# IDE and Editor Specific Configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
