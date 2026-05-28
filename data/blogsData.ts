@@ -1,9 +1,22 @@
 import { imagesData } from "@/data/imagesData";
 
+export const blogCategoryOptions = [
+  { label: "Acne", slug: "acne", description: "Breakouts, acne marks, scars, oily skin, and long-term prevention." },
+  { label: "Hair Loss", slug: "hair-loss", description: "Hair fall, thinning, PRP, scalp health, and hair density guidance." },
+  { label: "Anti Aging", slug: "anti-aging", description: "Aging, skin tightening, Botox, fillers, and facial rejuvenation." },
+  { label: "Laser Treatments", slug: "laser-treatments", description: "Laser hair removal, resurfacing, scars, pigmentation, and safety." },
+  { label: "Skin Care Tips", slug: "skin-care-tips", description: "Daily routines, product choices, sunscreen, and barrier care." },
+  { label: "Seasonal Skin Care", slug: "seasonal-skin-care", description: "Summer, monsoon, winter, humidity, sun, and Indian weather care." },
+  { label: "Hair Transplant", slug: "hair-transplant", description: "Transplant planning, recovery, donor care, and natural hairline design." },
+  { label: "Pediatric Dermatology", slug: "pediatric-dermatology", description: "Child skin care, rashes, birthmarks, itching, and parent guidance." }
+] as const;
+
+export type BlogCategory = (typeof blogCategoryOptions)[number]["label"];
+
 export type BlogPost = {
   slug: string;
   title: string;
-  category: string;
+  category: BlogCategory;
   excerpt: string;
   image: string;
   author: string;
@@ -13,16 +26,7 @@ export type BlogPost = {
   faqs: { question: string; answer: string }[];
 };
 
-export const blogCategories = [
-  "Acne",
-  "Hair Loss",
-  "Anti Aging",
-  "Laser Treatments",
-  "Skin Care Tips",
-  "Seasonal Skin Care",
-  "Hair Transplant",
-  "Pediatric Dermatology"
-];
+export const blogCategories = blogCategoryOptions.map((category) => category.label);
 
 const sections = (topic: string) => [
   {
@@ -38,6 +42,23 @@ const sections = (topic: string) => [
     body: "AURA uses a consultation-first model: diagnosis, expectation-setting, treatment selection, aftercare, and review. The aim is progress that feels calm, safe, and believable."
   }
 ];
+
+export const blogTemplate: BlogPost = {
+  slug: "new-blog-slug",
+  title: "New Blog Title",
+  category: "Skin Care Tips",
+  excerpt: "One sentence that explains why this article is useful.",
+  image: "/images/blog/new-blog.jpg",
+  author: "Dr. Nidheesh Agarwal",
+  readTime: "5 min read",
+  publishedAt: "2026-05-28",
+  sections: [
+    { heading: "Why it matters", body: "Write the first article section here." },
+    { heading: "What to look for", body: "Write the second article section here." },
+    { heading: "When to see a dermatologist", body: "Write the third article section here." }
+  ],
+  faqs: [{ question: "Common patient question?", answer: "Helpful answer for SEO and patient trust." }]
+};
 
 export const blogsData: BlogPost[] = [
   {

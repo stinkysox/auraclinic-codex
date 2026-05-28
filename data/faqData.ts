@@ -1,4 +1,24 @@
-export const faqData = [
+export const faqCategoryOptions = [
+  "Acne",
+  "Hair Loss",
+  "Cosmetic Procedures",
+  "Hair Transplant",
+  "Pediatric Care"
+] as const;
+
+export type FaqCategory = (typeof faqCategoryOptions)[number];
+
+export type FaqGroup = {
+  category: FaqCategory;
+  items: { question: string; answer: string }[];
+};
+
+export const faqTemplate: FaqGroup = {
+  category: "Acne",
+  items: [{ question: "New question?", answer: "New answer." }]
+};
+
+export const faqData: FaqGroup[] = [
   {
     category: "Acne",
     items: [

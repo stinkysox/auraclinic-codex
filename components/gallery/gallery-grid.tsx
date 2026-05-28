@@ -1,13 +1,13 @@
 "use client";
 
-import { galleryData } from "@/data/galleryData";
+import { galleryCategoryOptions, galleryData } from "@/data/galleryData";
 import Image from "next/image";
 import { useState } from "react";
 
 export function GalleryGrid() {
   const [filter, setFilter] = useState("All");
   const [modal, setModal] = useState<(typeof galleryData)[number] | null>(null);
-  const filters = ["All", ...Array.from(new Set(galleryData.map((item) => item.category)))];
+  const filters = ["All", ...galleryCategoryOptions.map((category) => category.label)];
   const items = filter === "All" ? galleryData : galleryData.filter((item) => item.category === filter);
   return (
     <section className="py-20">

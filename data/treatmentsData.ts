@@ -1,12 +1,39 @@
 import { imagesData } from "@/data/imagesData";
 
-export type TreatmentCategory =
-  | "Clinical Dermatology"
-  | "Hair Treatments"
-  | "Hair Transplant"
-  | "Cosmetic Dermatology"
-  | "Skin Surgeries"
-  | "Pediatric Dermatology";
+export const treatmentCategoryOptions = [
+  {
+    label: "Clinical Dermatology",
+    slug: "clinical-dermatology",
+    description: "Medical diagnosis and treatment for skin, nail, allergy, infection, and inflammatory concerns."
+  },
+  {
+    label: "Cosmetic Dermatology",
+    slug: "cosmetic-dermatology",
+    description: "Refined aesthetic treatments for glow, texture, pigmentation, aging, and facial balance."
+  },
+  {
+    label: "Hair Treatments",
+    slug: "hair-treatments",
+    description: "Dermatologist-led care for hair fall, thinning, dandruff, alopecia, and scalp health."
+  },
+  {
+    label: "Hair Transplant",
+    slug: "hair-transplant",
+    description: "Surgical restoration for scalp, beard, moustache, eyebrow, and scar correction goals."
+  },
+  {
+    label: "Pediatric Dermatology",
+    slug: "pediatric-dermatology",
+    description: "Gentle skin care for children, rashes, white spots, birthmarks, and infections."
+  },
+  {
+    label: "Skin Surgeries",
+    slug: "skin-surgeries",
+    description: "Minor dermatologic procedures including wart, tag, corn, scar, and vitiligo surgeries."
+  }
+] as const;
+
+export type TreatmentCategory = (typeof treatmentCategoryOptions)[number]["label"];
 
 export type Treatment = {
   slug: string;
@@ -58,14 +85,25 @@ const detail = (title: string, focus: string): Omit<Treatment, "slug" | "title" 
   ]
 });
 
-export const treatmentCategories: TreatmentCategory[] = [
-  "Clinical Dermatology",
-  "Cosmetic Dermatology",
-  "Hair Treatments",
-  "Hair Transplant",
-  "Pediatric Dermatology",
-  "Skin Surgeries"
-];
+export const treatmentCategories = treatmentCategoryOptions.map((category) => category.label);
+
+export const treatmentTemplate: Treatment = {
+  slug: "new-treatment-slug",
+  title: "New Treatment Name",
+  category: "Clinical Dermatology",
+  excerpt: "One sentence describing the treatment and why someone should book.",
+  image: "/images/treatments/new-treatment.jpg",
+  keywords: ["new treatment Udaipur", "skin clinic Udaipur"],
+  overview: "Write a clear overview of what this treatment does and who it helps.",
+  causes: ["Cause or trigger one", "Cause or trigger two", "Cause or trigger three"],
+  symptoms: ["Symptom or concern one", "Symptom or concern two", "Symptom or concern three"],
+  process: ["Consultation", "Diagnosis", "Treatment", "Follow-up"],
+  recovery: "Explain downtime, aftercare, and follow-up in simple language.",
+  faqs: [
+    { question: "Is this treatment safe?", answer: "Answer in simple, medically responsible language." },
+    { question: "How many sessions are needed?", answer: "Explain that it depends on diagnosis and severity." }
+  ]
+};
 
 export const treatmentsData: Treatment[] = [
   {

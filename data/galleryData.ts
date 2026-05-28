@@ -1,6 +1,34 @@
 import { imagesData } from "@/data/imagesData";
 
-export const galleryData = [
+export const galleryCategoryOptions = [
+  { label: "Acne", slug: "acne" },
+  { label: "Hair loss", slug: "hair-loss" },
+  { label: "Pigmentation", slug: "pigmentation" },
+  { label: "Hair transplant", slug: "hair-transplant" },
+  { label: "Anti-aging", slug: "anti-aging" },
+  { label: "Clinic interiors", slug: "clinic-interiors" },
+  { label: "Procedures", slug: "procedures" }
+] as const;
+
+export type GalleryCategory = (typeof galleryCategoryOptions)[number]["label"];
+
+export type GalleryItem = {
+  id: string;
+  category: GalleryCategory;
+  title: string;
+  before: string;
+  after: string;
+};
+
+export const galleryTemplate: GalleryItem = {
+  id: "new-gallery-item",
+  category: "Acne",
+  title: "New transformation title",
+  before: "/images/gallery/new-before.jpg",
+  after: "/images/gallery/new-after.jpg"
+};
+
+export const galleryData: GalleryItem[] = [
   {
     id: "g1",
     category: "Acne",
