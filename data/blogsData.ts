@@ -1,3 +1,5 @@
+import { imagesData } from "@/data/imagesData";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -10,8 +12,6 @@ export type BlogPost = {
   sections: { heading: string; body: string }[];
   faqs: { question: string; answer: string }[];
 };
-
-const blogImage = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1500&q=82`;
 
 export const blogCategories = [
   "Acne",
@@ -45,7 +45,7 @@ export const blogsData: BlogPost[] = [
     title: "10 Early Signs Of Hair Loss You Shouldn't Ignore",
     category: "Hair Loss",
     excerpt: "A calm guide to spotting pattern changes before hair loss becomes advanced.",
-    image: blogImage("photo-1522335789203-aabd1fc54bc9"),
+    image: imagesData.blogs.hairLossSigns,
     author: "Dr. Nidheesh Agarwal",
     readTime: "6 min read",
     publishedAt: "2026-01-12",
@@ -57,7 +57,7 @@ export const blogsData: BlogPost[] = [
     title: "Best Treatments For Acne Scars",
     category: "Acne",
     excerpt: "Understanding scars, texture, and why combination treatment often works best.",
-    image: blogImage("photo-1596755389378-c31d21fd1273"),
+    image: imagesData.blogs.acneScars,
     author: "AURA Editorial",
     readTime: "7 min read",
     publishedAt: "2026-01-18",
@@ -69,7 +69,7 @@ export const blogsData: BlogPost[] = [
     title: "PRP vs Hair Transplant",
     category: "Hair Transplant",
     excerpt: "A practical comparison between regenerative support and surgical restoration.",
-    image: blogImage("photo-1516975080664-ed2fc6a32937"),
+    image: imagesData.blogs.prpVsTransplant,
     author: "Dr. Nidheesh Agarwal",
     readTime: "8 min read",
     publishedAt: "2026-02-03",
@@ -81,7 +81,7 @@ export const blogsData: BlogPost[] = [
     title: "How To Protect Skin During Indian Summers",
     category: "Seasonal Skin Care",
     excerpt: "Heat, humidity, sweat, and sun care advice for Indian weather.",
-    image: blogImage("photo-1507525428034-b723cf961d3e"),
+    image: imagesData.blogs.indianSummers,
     author: "AURA Editorial",
     readTime: "5 min read",
     publishedAt: "2026-02-20",
@@ -93,7 +93,7 @@ export const blogsData: BlogPost[] = [
     title: "What Causes Pigmentation?",
     category: "Skin Care Tips",
     excerpt: "Sun, hormones, inflammation, and product misuse can all influence uneven tone.",
-    image: blogImage("photo-1601612628452-9e99ced43524"),
+    image: imagesData.blogs.pigmentationCauses,
     author: "Dr. Nidheesh Agarwal",
     readTime: "6 min read",
     publishedAt: "2026-03-05",
@@ -105,7 +105,7 @@ export const blogsData: BlogPost[] = [
     title: "Chemical Peels Explained",
     category: "Laser Treatments",
     excerpt: "What peels do, who they suit, and how downtime is planned.",
-    image: blogImage("photo-1620916566398-39f1143ab7be"),
+    image: imagesData.blogs.chemicalPeels,
     author: "AURA Editorial",
     readTime: "5 min read",
     publishedAt: "2026-03-16",
@@ -117,7 +117,7 @@ export const blogsData: BlogPost[] = [
     title: "Daily Skin Care Routine For Oily Skin",
     category: "Skin Care Tips",
     excerpt: "A simple, dermatologist-minded routine that avoids over-stripping.",
-    image: blogImage("photo-1556228720-195a672e8a03"),
+    image: imagesData.blogs.oilySkin,
     author: "AURA Editorial",
     readTime: "4 min read",
     publishedAt: "2026-04-01",
@@ -129,7 +129,7 @@ export const blogsData: BlogPost[] = [
     title: "How Stress Affects Hair Fall",
     category: "Hair Loss",
     excerpt: "Stress-related shedding, timelines, and when to seek help.",
-    image: blogImage("photo-1515377905703-c4788e51af15"),
+    image: imagesData.blogs.stressHairFall,
     author: "Dr. Nidheesh Agarwal",
     readTime: "6 min read",
     publishedAt: "2026-04-18",

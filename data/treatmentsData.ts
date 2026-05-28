@@ -1,3 +1,5 @@
+import { imagesData } from "@/data/imagesData";
+
 export type TreatmentCategory =
   | "Clinical Dermatology"
   | "Hair Treatments"
@@ -56,8 +58,6 @@ const detail = (title: string, focus: string): Omit<Treatment, "slug" | "title" 
   ]
 });
 
-const img = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=82`;
-
 export const treatmentCategories: TreatmentCategory[] = [
   "Clinical Dermatology",
   "Cosmetic Dermatology",
@@ -73,7 +73,7 @@ export const treatmentsData: Treatment[] = [
     title: "Pimples / Acne",
     category: "Clinical Dermatology",
     excerpt: "Diagnosis-led acne care for active breakouts, marks, texture, and prevention.",
-    image: img("photo-1596755389378-c31d21fd1273"),
+    image: imagesData.treatments.acne,
     keywords: ["acne treatment Udaipur", "pimple dermatologist", "acne scars"],
     ...detail("Acne", "breakouts and acne marks")
   },
@@ -82,7 +82,7 @@ export const treatmentsData: Treatment[] = [
     title: "Fungal Infections / Ringworm",
     category: "Clinical Dermatology",
     excerpt: "Targeted treatment for ringworm, itching, recurrence, and family spread prevention.",
-    image: img("photo-1570172619644-dfd03ed5d881"),
+    image: imagesData.treatments.fungalInfections,
     keywords: ["fungal infection treatment", "ringworm doctor Udaipur"],
     ...detail("Fungal Infection", "skin infection")
   },
@@ -91,7 +91,7 @@ export const treatmentsData: Treatment[] = [
     title: "Vitiligo / Leucoderma",
     category: "Clinical Dermatology",
     excerpt: "Sensitive, evidence-aware care for white patches and pigment restoration planning.",
-    image: img("photo-1584362917165-526a968579e8"),
+    image: imagesData.treatments.vitiligo,
     keywords: ["vitiligo treatment Udaipur", "leucoderma"],
     ...detail("Vitiligo", "pigment change")
   },
@@ -100,7 +100,7 @@ export const treatmentsData: Treatment[] = [
     title: "Pigmentation Treatment",
     category: "Cosmetic Dermatology",
     excerpt: "Layered protocols for melasma, dark spots, sun damage, and uneven tone.",
-    image: img("photo-1601612628452-9e99ced43524"),
+    image: imagesData.treatments.pigmentation,
     keywords: ["pigmentation treatment Udaipur", "dark spots"],
     ...detail("Pigmentation", "uneven tone")
   },
@@ -109,7 +109,7 @@ export const treatmentsData: Treatment[] = [
     title: "Chemical Peels",
     category: "Cosmetic Dermatology",
     excerpt: "Medical-grade peels for clarity, glow, acne marks, and texture refinement.",
-    image: img("photo-1620916566398-39f1143ab7be"),
+    image: imagesData.treatments.chemicalPeels,
     keywords: ["chemical peel Udaipur", "skin glow treatment"],
     ...detail("Chemical Peel", "skin renewal")
   },
@@ -118,7 +118,7 @@ export const treatmentsData: Treatment[] = [
     title: "Laser Hair Removal",
     category: "Cosmetic Dermatology",
     excerpt: "Comfort-led laser hair reduction planned around skin tone and hair pattern.",
-    image: img("photo-1571942676516-bcab84649e44"),
+    image: imagesData.treatments.laserHairRemoval,
     keywords: ["laser hair removal Udaipur"],
     ...detail("Laser Hair Removal", "unwanted hair")
   },
@@ -127,7 +127,7 @@ export const treatmentsData: Treatment[] = [
     title: "Botox",
     category: "Cosmetic Dermatology",
     excerpt: "Subtle expression-softening treatments designed for natural-looking refinement.",
-    image: img("photo-1556228720-195a672e8a03"),
+    image: imagesData.treatments.botox,
     keywords: ["botox Udaipur", "anti aging dermatologist"],
     ...detail("Botox", "dynamic lines")
   },
@@ -136,7 +136,7 @@ export const treatmentsData: Treatment[] = [
     title: "Fillers",
     category: "Cosmetic Dermatology",
     excerpt: "Elegant volume balancing, contour support, and facial rejuvenation planning.",
-    image: img("photo-1607008829749-c0f284a4981f"),
+    image: imagesData.treatments.fillers,
     keywords: ["dermal fillers Udaipur"],
     ...detail("Fillers", "facial volume")
   },
@@ -145,7 +145,7 @@ export const treatmentsData: Treatment[] = [
     title: "PRP / Platelet Rich Plasma",
     category: "Hair Treatments",
     excerpt: "Regenerative scalp therapy for selected patterns of hair thinning and shedding.",
-    image: img("photo-1522335789203-aabd1fc54bc9"),
+    image: imagesData.treatments.prpHair,
     keywords: ["PRP hair treatment Udaipur", "hair fall treatment"],
     ...detail("PRP Hair Treatment", "hair thinning")
   },
@@ -154,7 +154,7 @@ export const treatmentsData: Treatment[] = [
     title: "Male Baldness",
     category: "Hair Treatments",
     excerpt: "Medical and procedural pathways for male pattern hair loss.",
-    image: img("photo-1621605815971-fbc98d665033"),
+    image: imagesData.treatments.maleBaldness,
     keywords: ["male baldness treatment", "hair loss Udaipur"],
     ...detail("Male Baldness", "male pattern hair loss")
   },
@@ -163,7 +163,7 @@ export const treatmentsData: Treatment[] = [
     title: "Female Hair Fall",
     category: "Hair Treatments",
     excerpt: "Root-cause investigation and gentle plans for shedding, thinning, and density loss.",
-    image: img("photo-1515377905703-c4788e51af15"),
+    image: imagesData.treatments.femaleHairFall,
     keywords: ["female hair fall treatment Udaipur"],
     ...detail("Female Hair Fall", "hair fall")
   },
@@ -172,7 +172,7 @@ export const treatmentsData: Treatment[] = [
     title: "Hair Transplant",
     category: "Hair Transplant",
     excerpt: "Natural hairline design and transplant planning for scalp restoration.",
-    image: img("photo-1516975080664-ed2fc6a32937"),
+    image: imagesData.treatments.hairTransplant,
     keywords: ["hair transplant Udaipur", "hair transplant surgeon"],
     ...detail("Hair Transplant", "hair restoration")
   },
@@ -181,7 +181,7 @@ export const treatmentsData: Treatment[] = [
     title: "Beard Transplant",
     category: "Hair Transplant",
     excerpt: "Density and shape correction for beard, moustache, and facial hair goals.",
-    image: img("photo-1521590832167-7bcbfaa6381f"),
+    image: imagesData.treatments.beardTransplant,
     keywords: ["beard transplant Udaipur"],
     ...detail("Beard Transplant", "facial hair density")
   },
@@ -190,7 +190,7 @@ export const treatmentsData: Treatment[] = [
     title: "Wart Removal",
     category: "Skin Surgeries",
     excerpt: "Precise wart removal with attention to comfort, healing, and recurrence advice.",
-    image: img("photo-1519494026892-80bbd2d6fd0d"),
+    image: imagesData.treatments.wartRemoval,
     keywords: ["wart removal Udaipur"],
     ...detail("Wart Removal", "skin growth")
   },
@@ -199,7 +199,7 @@ export const treatmentsData: Treatment[] = [
     title: "Skin Tag Removal",
     category: "Skin Surgeries",
     excerpt: "Clean removal of skin tags and small benign lesions after clinical assessment.",
-    image: img("photo-1581595220892-b0739db3ba8c"),
+    image: imagesData.treatments.skinTagRemoval,
     keywords: ["skin tag removal Udaipur"],
     ...detail("Skin Tag Removal", "benign lesions")
   },
@@ -208,7 +208,7 @@ export const treatmentsData: Treatment[] = [
     title: "Atopic Dermatitis",
     category: "Pediatric Dermatology",
     excerpt: "Child-sensitive eczema care with barrier repair, triggers, and parent guidance.",
-    image: img("photo-1542736667-069246bdbc74"),
+    image: imagesData.treatments.pediatricDermatitis,
     keywords: ["pediatric dermatologist Udaipur", "atopic dermatitis child"],
     ...detail("Atopic Dermatitis", "childhood eczema")
   }

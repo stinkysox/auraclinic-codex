@@ -2,15 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { clinicData } from "@/data/clinicData";
+import { imagesData } from "@/data/imagesData";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, BadgeCheck, Star } from "lucide-react";
 import Image from "next/image";
-
-const heroImages = [
-  "https://images.unsplash.com/photo-1607008829749-c0f284a4981f?auto=format&fit=crop&w=1200&q=84",
-  "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=84",
-  "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=900&q=84"
-];
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -52,13 +47,13 @@ export function Hero() {
 
         <motion.div className="relative min-h-[560px]" style={{ y }}>
           <div className="absolute right-0 top-8 h-[470px] w-[76%] overflow-hidden rounded-[2.5rem] shadow-aura">
-            <Image src={heroImages[0]} alt="Luxury dermatology skin care treatment" fill priority className="object-cover" />
+            <Image src={imagesData.hero.main} alt="Luxury dermatology skin care treatment" fill priority className="object-cover" />
           </div>
           <motion.div className="absolute left-0 top-28 h-72 w-56 overflow-hidden rounded-[2rem] shadow-aura" animate={{ y: [0, -18, 0] }} transition={{ duration: 7, repeat: Infinity }}>
-            <Image src={heroImages[1]} alt="Premium skin care ritual" fill className="object-cover" />
+            <Image src={imagesData.hero.ritual} alt="Premium skin care ritual" fill className="object-cover" />
           </motion.div>
           <motion.div className="absolute bottom-8 right-12 h-56 w-72 overflow-hidden rounded-[2rem] shadow-aura" animate={{ y: [0, 18, 0] }} transition={{ duration: 8, repeat: Infinity }}>
-            <Image src={heroImages[2]} alt="Modern clinic interior" fill className="object-cover" />
+            <Image src={imagesData.hero.clinic} alt="Modern clinic interior" fill className="object-cover" />
           </motion.div>
           <div className="glass absolute left-8 top-4 rounded-full px-5 py-3 text-sm text-charcoal shadow-aura">
             <span className="inline-flex items-center gap-2"><BadgeCheck size={16} className="text-gold" /> Ethical, diagnosis-first care</span>

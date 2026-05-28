@@ -7,6 +7,7 @@ import { blogsData } from "@/data/blogsData";
 import { clinicData } from "@/data/clinicData";
 import { doctorsData } from "@/data/doctorsData";
 import { galleryData } from "@/data/galleryData";
+import { imagesData } from "@/data/imagesData";
 import { testimonialsData } from "@/data/testimonialsData";
 import { treatmentsData } from "@/data/treatmentsData";
 import { ArrowRight, BadgeCheck, Quote, Star } from "lucide-react";
@@ -22,7 +23,7 @@ export function WhyChooseUs() {
         <div className="mt-16 grid gap-8 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
             <div className="sticky top-28 overflow-hidden rounded-[2.5rem] shadow-aura">
-              <Image src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=82" alt="Premium clinical room" width={900} height={1100} className="h-[620px] w-full object-cover" />
+              <Image src={imagesData.clinic.consultationRoom} alt="Premium clinical room" width={900} height={1100} className="h-[620px] w-full object-cover" />
             </div>
           </Reveal>
           <div className="space-y-8 lg:col-span-3">
@@ -49,7 +50,7 @@ export function FeaturedTreatments() {
   return (
     <section className="overflow-hidden bg-charcoal py-24 text-porcelain md:py-32">
       <div className="container-aura">
-        <SectionHeading eyebrow="Featured treatments" title="Precision for skin, hair, and confidence." text="Explore high-demand treatments crafted around diagnosis, suitability, and elegant outcomes." />
+        <SectionHeading eyebrow="Featured treatments" title="Precision for skin, hair, and confidence." text="Explore high-demand treatments crafted around diagnosis, suitability, and elegant outcomes." tone="dark" />
         <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {featured.map((treatment, index) => (
             <Reveal key={treatment.slug} delay={index * 0.05}>
@@ -166,12 +167,7 @@ export function Testimonials() {
 }
 
 export function ClinicExperience() {
-  const images = [
-    "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1000&q=82",
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=82",
-    "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=1000&q=82",
-    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=82"
-  ];
+  const images = imagesData.clinic.experience;
   return (
     <section className="overflow-hidden bg-porcelain py-24 md:py-32">
       <div className="container-aura">

@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/motion/reveal";
+import { imagesData } from "@/data/imagesData";
 import Image from "next/image";
 
 const timeline = [
@@ -17,7 +18,7 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="container-aura grid gap-12 lg:grid-cols-[.9fr_1.1fr]">
           <Reveal>
-            <Image src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1300&q=82" alt="AURA clinic interior" width={900} height={1100} className="h-[680px] rounded-[2.5rem] object-cover shadow-aura" />
+            <Image src={imagesData.clinic.interior} alt="AURA clinic interior" width={900} height={1100} className="h-[680px] rounded-[2.5rem] object-cover shadow-aura" />
           </Reveal>
           <div>
             <SectionHeading eyebrow="Story" title="Modern medicine, with softer edges." text="The clinic experience is deliberately quiet: refined materials, private conversations, considered treatment rooms, and a tone that keeps patients informed without overwhelm." />

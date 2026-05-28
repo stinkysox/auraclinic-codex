@@ -4,55 +4,41 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FloatingActions } from "@/components/layout/floating-actions";
 import { SiteShell } from "@/components/motion/site-shell";
-import { clinicData } from "@/data/clinicData";
+import { seoData } from "@/data/seoData";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://auraskinhairclinic.com"),
+  metadataBase: new URL(seoData.siteUrl),
   title: {
-    default: "AURA Skin & Hair Clinic | Dermatologist in Udaipur",
-    template: "%s | AURA Skin & Hair Clinic"
+    default: seoData.defaultTitle,
+    template: seoData.titleTemplate
   },
-  description:
-    "Premium dermatology, cosmetic skin care, PRP, hair transplant, acne, pigmentation and pediatric dermatology clinic in Sardarpura, Udaipur by Dr. Nidheesh Agarwal.",
-  keywords: [
-    "dermatologist in Udaipur",
-    "skin clinic Udaipur",
-    "hair transplant Udaipur",
-    "acne treatment Udaipur",
-    "PRP hair treatment Udaipur",
-    "AURA Skin and Hair Clinic"
-  ],
+  description: seoData.defaultDescription,
+  keywords: [...seoData.localKeywords, ...seoData.treatmentKeywords],
   openGraph: {
     title: "AURA Skin & Hair Clinic",
     description: "Modern dermatology with a human touch in Udaipur.",
-    url: "https://auraskinhairclinic.com",
-    siteName: "AURA Skin & Hair Clinic",
+    url: seoData.siteUrl,
+    siteName: seoData.siteName,
     locale: "en_IN",
     type: "website"
+  },
+  alternates: {
+    canonical: seoData.siteUrl
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
   }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    name: clinicData.name,
-    medicalSpecialty: ["Dermatology", "Cosmetology", "Hair Transplant Surgery"],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: clinicData.address,
-      addressLocality: "Udaipur",
-      addressRegion: "Rajasthan",
-      addressCountry: "IN"
-    },
-    telephone: clinicData.phone,
-    email: clinicData.email,
-    physician: {
-      "@type": "Physician",
-      name: clinicData.doctor,
-      medicalSpecialty: "Dermatology"
-    }
-  };
+  const schema = seoData.businessSchema;
 
   return (
     <html lang="en-IN">

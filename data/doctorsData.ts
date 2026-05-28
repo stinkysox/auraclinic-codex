@@ -1,9 +1,11 @@
+import { imagesData } from "@/data/imagesData";
+
 export const doctorsData = [
   {
     slug: "dr-nidheesh-agarwal",
     name: "Dr. Nidheesh Agarwal",
     title: "Dermatologist, Cosmetologist and Hair Transplant Surgeon",
-    image: "https://i.pinimg.com/736x/0c/e0/da/0ce0da30bceee3a1c274cf376860ea12.jpg",
+    image: imagesData.doctor.drNidheeshAgarwal,
     quote:
       "The best dermatology feels precise, honest, and deeply personal. Skin is medical, emotional, and social at the same time.",
     bio:
