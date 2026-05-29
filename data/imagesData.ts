@@ -5,7 +5,7 @@ export const imagesData = {
   hero: {
     main: unsplash("photo-1607008829749-c0f284a4981f", 1200, 84),
     ritual: unsplash("photo-1620916566398-39f1143ab7be", 900, 84),
-    clinic: unsplash("photo-1631217868264-e5b90bb7e133", 900, 84)
+    clinic: unsplash("photo-1631217868264-e5b90bb7e133", 900, 84),
   },
   clinic: {
     interior: unsplash("photo-1629909613654-28e377c37b09", 1300),
@@ -14,11 +14,12 @@ export const imagesData = {
       unsplash("photo-1631217868264-e5b90bb7e133", 1000),
       unsplash("photo-1629909613654-28e377c37b09", 1000),
       unsplash("photo-1581595220892-b0739db3ba8c", 1000),
-      unsplash("photo-1519494026892-80bbd2d6fd0d", 1000)
-    ]
+      unsplash("photo-1519494026892-80bbd2d6fd0d", 1000),
+    ],
   },
   doctor: {
-    drNidheeshAgarwal: unsplash("photo-1614608682850-e0d6ed316d47", 1300)
+    drNidheeshAgarwal:
+      "https://i.pinimg.com/736x/0c/e0/da/0ce0da30bceee3a1c274cf376860ea12.jpg",
   },
   treatments: {
     acne: unsplash("photo-1596755389378-c31d21fd1273"),
@@ -36,7 +37,7 @@ export const imagesData = {
     beardTransplant: unsplash("photo-1521590832167-7bcbfaa6381f"),
     wartRemoval: unsplash("photo-1519494026892-80bbd2d6fd0d"),
     skinTagRemoval: unsplash("photo-1581595220892-b0739db3ba8c"),
-    pediatricDermatitis: unsplash("photo-1542736667-069246bdbc74")
+    pediatricDermatitis: unsplash("photo-1542736667-069246bdbc74"),
   },
   blogs: {
     hairLossSigns: unsplash("photo-1522335789203-aabd1fc54bc9", 1500),
@@ -46,7 +47,7 @@ export const imagesData = {
     pigmentationCauses: unsplash("photo-1601612628452-9e99ced43524", 1500),
     chemicalPeels: unsplash("photo-1620916566398-39f1143ab7be", 1500),
     oilySkin: unsplash("photo-1556228720-195a672e8a03", 1500),
-    stressHairFall: unsplash("photo-1515377905703-c4788e51af15", 1500)
+    stressHairFall: unsplash("photo-1515377905703-c4788e51af15", 1500),
   },
   gallery: {
     acneBefore: unsplash("photo-1509967419530-da38b4704bc6", 900),
@@ -58,6 +59,6 @@ export const imagesData = {
     clinicBefore: unsplash("photo-1631217868264-e5b90bb7e133", 900),
     clinicAfter: unsplash("photo-1629909613654-28e377c37b09", 900),
     antiAgingBefore: unsplash("photo-1556228720-195a672e8a03", 900),
-    antiAgingAfter: unsplash("photo-1607008829749-c0f284a4981f", 900)
-  }
+    antiAgingAfter: unsplash("photo-1607008829749-c0f284a4981f", 900),
+  },
 };
