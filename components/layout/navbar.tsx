@@ -29,7 +29,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+    <header className="fixed inset-x-0 top-0 z-50 overflow-hidden px-4 pt-4">
       <nav
         className={cn(
           "mx-auto max-w-7xl rounded-full border px-4 py-3 transition-all duration-500",
